@@ -1,4 +1,3 @@
-// import { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
@@ -17,6 +16,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/case-studies" element={<CaseStudyPage />} />
+        {/* <Route path="/case-studies/:slug" element={<CaseStudyDetailsPage />} /> */}
         <Route path="/insights" element={<InsightsPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />

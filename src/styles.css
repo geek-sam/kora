@@ -73,6 +73,30 @@ body {
   }
 }
 
+@keyframes logo-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-25%);
+  }
+}
+
+.animate-logo-marquee {
+  animation: logo-marquee 24s linear infinite;
+  will-change: transform;
+}
+
+.animate-logo-marquee:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-logo-marquee {
+    animation: none;
+  }
+}
+
 /* =====================================
    SERVICES SECTION
 ===================================== */

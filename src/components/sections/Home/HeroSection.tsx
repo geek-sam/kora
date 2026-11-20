@@ -1,5 +1,13 @@
 import React from "react";
 
+const logos = [
+  { name: "NAH", className: "font-bold tracking-tight" },
+  { name: "theo", className: "font-serif italic" },
+  { name: "venice.", className: "font-serif" },
+  { name: "◖ Lightspeed", className: "font-semibold" },
+  { name: "✣ Sitemark", className: "font-semibold" },
+];
+
 const heroStatement = "The strategies that built your company won't scale it.";
 
 const HeroSection: React.FC = () => {
@@ -94,17 +102,29 @@ const HeroSection: React.FC = () => {
               </div>
 
               {/* Client Logos */}
-              <div className="flex flex-wrap items-center gap-7 text-xl font-semibold opacity-60 md:gap-10 md:text-2xl">
-                <span>NAH</span>
-                <span className="font-serif italic">theo</span>
-                <span className="font-serif">venice.</span>
-                <span>◖ Lightspeed</span>
-                <span>✣ Sitemark</span>
+              <div className="relative w-[100vw] md:w-[40vw] overflow-hidden">
+                {/* <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-[#315c70] to-transparent md:w-28" /> */}
+                <div className="flex w-max animate-logo-marquee items-center gap-7 md:gap-10">
+                  {[...logos, ...logos, ...logos, ...logos].map(
+                    (logo, index) => (
+                      <span
+                        key={`${logo.name}-${index}`}
+                        className={`shrink-0 whitespace-nowrap text-xl opacity-60 md:text-2xl ${logo.className}`}
+                      >
+                        {logo.name}
+                      </span>
+                    ),
+                  )}
+                </div>
+                {/* <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-[#315c70] to-transparent md:w-28" /> */}
               </div>
             </div>
 
             {/* Featured Case Study */}
-            <div className="flex w-full max-w-[460px] shrink-0 items-center gap-2 rounded-[28px] bg-[#f8f7ed] p-2.5 text-black">
+            <div
+              className="flex w-full max-w-[460px] shrink-0 items-center gap-2 rounded-[28px] bg-[#f8f7ed] p-2.5 text-black"
+              onClick={() => window.open("/case-studies")}
+            >
               <div className="h-[190px] w-[38%] shrink-0 overflow-hidden rounded-[20px] bg-black md:h-[200px]">
                 <img
                   src="/csHero.png"
