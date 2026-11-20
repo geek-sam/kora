@@ -1,0 +1,462 @@
+@import url("https://fonts.googleapis.com/css2?family=Allura&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Geist:ital,wght@0,100..900;1,100..900&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap");
+
+@import "tailwindcss";
+@source "../src";
+
+@theme inline {
+  --animate-fade-in: fade-in 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-fade-up: fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-scale-in: scale-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-glow: glow 6s ease-in-out infinite;
+  --animate-float: float 8s ease-in-out infinite;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background: #fffefa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.hero-stage {
+  position: relative;
+  isolation: isolate;
+  /* overflow: hidden; */
+}
+
+.hero-visual {
+  position: absolute;
+  inset: 0;
+  transform-origin: center center;
+  will-change: transform, filter;
+  backface-visibility: hidden;
+}
+
+.statement-word,
+.comparison-card {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+@media (max-width: 768px) {
+  .hero-stage {
+    border-radius: 24px;
+  }
+}
+
+@keyframes logo-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.logo-marquee {
+  animation: logo-scroll 55s linear infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-marquee {
+    animation: none;
+  }
+}
+
+/* =====================================
+   SERVICES SECTION
+===================================== */
+
+#services {
+  overflow: visible;
+}
+
+/* =====================================
+   SERVICE CARD STACK
+===================================== */
+
+.service-stack {
+  position: relative;
+  isolation: isolate;
+}
+
+.service-stack-item {
+  position: relative;
+  height: 100svh;
+  min-height: 620px;
+  margin-bottom: 0;
+}
+
+/* Each card sticks while its wrapper scrolls */
+.service-sticky-card {
+  position: sticky;
+  height: min(82svh, 760px);
+}
+
+/* Individual card */
+.service-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-origin: center top;
+  backface-visibility: hidden;
+}
+
+/* Image hover */
+.service-card img {
+  backface-visibility: hidden;
+}
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 768px) {
+  .service-stack-item {
+    height: 100svh;
+    min-height: 650px;
+  }
+
+  .service-sticky-card {
+    height: 88svh;
+  }
+
+  .service-card {
+    border-radius: 24px;
+  }
+}
+
+/* Service card sequence */
+
+.service-scroll-list {
+  position: relative;
+  isolation: isolate;
+}
+
+.service-scroll-card {
+  position: relative;
+  width: 100%;
+  padding-bottom: 18vh;
+}
+
+.service-card-wrapper {
+  position: relative;
+  width: 100%;
+  will-change: transform, opacity;
+}
+
+.service-card {
+  transform-origin: center top;
+  backface-visibility: hidden;
+}
+
+.service-card img {
+  backface-visibility: hidden;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .service-scroll-card {
+    padding-bottom: 12vh;
+  }
+
+  .service-card {
+    min-height: 620px;
+    height: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-card-wrapper {
+    will-change: auto;
+  }
+}
+
+/* Process section */
+
+.process-section {
+  isolation: isolate;
+}
+
+.process-card {
+  flex-shrink: 1;
+  outline: none;
+}
+
+.process-card:focus-visible {
+  outline: 2px solid #59bf9b;
+  outline-offset: 3px;
+}
+
+.process-card > div:last-child {
+  transition:
+    opacity 450ms ease,
+    transform 450ms ease;
+}
+
+/* Mobile carousel */
+
+.process-mobile-carousel {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overscroll-behavior-x: contain;
+}
+
+.process-mobile-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.process-mobile-card {
+  scroll-snap-align: start;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .process-card {
+    transition: none;
+  }
+
+  .process-mobile-carousel {
+    scroll-behavior: auto;
+  }
+}
+
+/* =====================================
+   TEAM SECTION
+===================================== */
+
+.team-section {
+  isolation: isolate;
+}
+
+/* Team member rows */
+.team-member-row {
+  transition:
+    background-color 450ms ease,
+    color 450ms ease,
+    border-radius 450ms ease;
+}
+
+/* =====================================
+   TEAM PROFILE MODAL
+===================================== */
+
+.team-modal-backdrop {
+  animation: teamBackdropIn 450ms ease forwards;
+}
+
+.team-modal {
+  animation: teamModalIn 550ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  transform-origin: center;
+}
+
+@keyframes teamBackdropIn {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0);
+  }
+
+  to {
+    opacity: 1;
+    backdrop-filter: blur(12px);
+  }
+}
+
+@keyframes teamModalIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 768px) {
+  .team-modal {
+    max-width: 520px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .team-modal,
+  .team-modal-backdrop {
+    animation: none;
+  }
+}
+
+/* =====================================
+   TESTIMONIAL CARDS
+===================================== */
+
+.testimonial-cards {
+  align-items: stretch;
+  isolation: isolate;
+}
+
+.testimonial-card {
+  flex-shrink: 1;
+  outline: none;
+  min-height: 270px;
+}
+
+.testimonial-card:focus-visible {
+  outline: 2px solid #59bf9b;
+  outline-offset: -3px;
+}
+
+/* Smooth card expansion */
+.testimonial-card {
+  transition:
+    flex-grow 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 500ms ease;
+}
+
+/* Mobile: vertically stacked cards */
+@media (max-width: 767px) {
+  .testimonial-cards {
+    flex-direction: column;
+    min-height: auto;
+    gap: 8px;
+  }
+
+  .testimonial-card {
+    flex: none !important;
+    width: 100%;
+    min-height: 215px;
+    padding: 22px;
+  }
+
+  .testimonial-card p {
+    opacity: 1;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .testimonial-card {
+    transition: none;
+  }
+}
+
+.results-section .metric-counter {
+  display: inline-block;
+  font-variant-numeric: tabular-nums;
+  will-change: contents;
+}
+
+.results-section article {
+  transition: background-color 350ms ease;
+}
+
+.results-section article:hover {
+  background-color: rgba(89, 191, 155, 0.035);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .results-section article {
+    transition: none;
+  }
+}
+
+/* Pricing details transition */
+
+.pricing-details-card {
+  animation: pricingCardEnter 450ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes pricingCardEnter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pricing-details-card {
+    animation: none;
+  }
+}
+
+/* Insights Section */
+
+.insight-card {
+  isolation: isolate;
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.insight-card-image {
+  will-change: transform, filter;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .insight-card:hover .insight-card-image {
+    transform: scale(1.09);
+    filter: blur(2px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .insight-card-image,
+  .insight-card {
+    transition: none !important;
+  }
+}
+
+.footer-panel {
+  isolation: isolate;
+  transform: translateZ(0);
+}
+
+.footer-panel img {
+  display: block;
+}
+
+/* Desktop wordmark positioning */
+@media (min-width: 769px) {
+  .footer-panel {
+    height: calc(100svh - 72px);
+  }
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+  .footer-panel {
+    min-height: 1050px;
+  }
+
+  .footer-panel > div:first-of-type {
+    padding-bottom: 270px;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .footer-panel {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
