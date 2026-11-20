@@ -3,7 +3,7 @@ import { teamMembers, type TeamMember } from "../../../data/dataConfig";
 import TeamMemberModal from "../../common/TeamMemberModal";
 
 const TeamSection = () => {
-  const [activeIndex, setActiveIndex] = useState(null);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
 
   const closeModal = useCallback(() => {
@@ -37,6 +37,7 @@ const TeamSection = () => {
 
             {/* Team Grid */}
             <div className="mt-12 grid grid-cols-1 gap-x-5 md:mt-14 md:grid-cols-2 md:gap-x-6">
+              {/* Add type to the index value */}
               {teamMembers.map((member, index: number) => {
                 const isActive = activeIndex === index;
 
