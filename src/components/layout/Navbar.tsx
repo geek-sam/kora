@@ -13,7 +13,7 @@ const Navbar: React.FC = () => {
   return (
     <header className="mx-auto fixed inset-x-0 top-0 z-[100] flex w-full max-w-[1920px] items-start justify-between bg-transparent px-20 pt-6 md:pt-7 lg:px-4 pointer-events-none">
       {/* Desktop Navigation */}
-      <nav className="hidden h-[61px] items-center gap-9 rounded-full bg-white px-5 text-[#171717] shadow-sm pointer-events-auto md:flex">
+      <nav className="ml-3 hidden h-[61px] items-center gap-9 rounded-full bg-white px-5 text-[#171717] shadow-sm pointer-events-auto md:flex">
         {/* Logo */}
         <a href="/" className="flex shrink-0 items-center gap-1.5">
           <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#58c49e] text-[17px] text-white">
@@ -48,7 +48,7 @@ const Navbar: React.FC = () => {
       </a>
 
       {/* Right Actions */}
-      <div className="pointer-events-auto flex items-center gap-2">
+      <div className="pointer-events-auto flex items-center gap-2 mr-3">
         <a
           href="/contact"
           className="hidden h-[61px] items-center gap-3 rounded-full bg-[#171717] py-2 pl-5 pr-2 text-[15px] text-white transition-transform hover:scale-105 sm:flex"

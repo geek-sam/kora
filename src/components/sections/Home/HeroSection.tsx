@@ -71,7 +71,7 @@ const HeroSection: React.FC = () => {
                       className="h-9 w-9 overflow-hidden rounded-full border-2 border-white bg-gray-300"
                     >
                       <img
-                        src={`/images/avatar-${item}.jpg`}
+                        src={`/trust/avatar-${item}.png`}
                         alt=""
                         className="h-full w-full object-cover"
                       />
@@ -107,7 +107,7 @@ const HeroSection: React.FC = () => {
             <div className="flex w-full max-w-[460px] shrink-0 items-center gap-2 rounded-[28px] bg-[#f8f7ed] p-2.5 text-black">
               <div className="h-[190px] w-[38%] shrink-0 overflow-hidden rounded-[20px] bg-black md:h-[200px]">
                 <img
-                  src="/images/case-study.jpg"
+                  src="/csHero.png"
                   alt="Sitemark case study"
                   className="h-full w-full object-cover"
                 />
