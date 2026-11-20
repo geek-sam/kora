@@ -141,7 +141,7 @@ const FounderSection = () => {
           {/* Founder Image */}
           <div className="founder-image group relative min-h-[390px] overflow-hidden rounded-[22px] md:min-h-[400px]">
             <img
-              src="/images/founder-koraline.jpg"
+              src="/about/founder.png"
               alt="Koraline Spencer, founder of Kora"
               className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.04]"
             />
@@ -150,7 +150,7 @@ const FounderSection = () => {
           {/* Team Image 1 */}
           <div className="founder-image group relative h-[300px] overflow-hidden rounded-[22px] md:h-[400px]">
             <img
-              src="/images/founder-team-1.jpg"
+              src="/about/about-1.png"
               alt="Kora team collaborating"
               className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
             />
@@ -159,7 +159,7 @@ const FounderSection = () => {
           {/* Team Image 2 */}
           <div className="founder-image group relative h-[300px] overflow-hidden rounded-[22px] md:h-[400px]">
             <img
-              src="/images/founder-team-2.jpg"
+              src="/about/about-2.png"
               alt="Kora team working together"
               className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
             />

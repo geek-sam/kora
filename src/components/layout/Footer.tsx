@@ -140,15 +140,11 @@ const Footer = () => {
     { label: "Case Studies", href: "/case-studies" },
     { label: "Insights", href: "/insights" },
     { label: "About us", href: "/about" },
-    { label: "Contact", href: "#contact" },
+    { label: "Contact", href: "/contact" },
   ];
 
   return (
-    <footer
-      ref={sectionRef}
-      className="relative min-h-screen w-full z-999"
-      style={{ zIndex: 999 }}
-    >
+    <footer ref={sectionRef} className="relative h-fit w-full">
       {/* GREEN FULL-SCREEN BACKGROUND REVEAL */}
       <div
         ref={revealRef}
@@ -159,16 +155,16 @@ const Footer = () => {
       />
 
       {/* OUTER GREEN CANVAS */}
-      <div className="relative z-99 flex min-h-screen w-full justify-center px-3 py-3 md:px-6 md:py-9">
+      <div className="relative  flex h-full w-full justify-center px-3 py-3 md:px-6 md:py-9">
         {/* CREAM FOOTER PANEL */}
         <div
           ref={panelRef}
-          className="footer-panel relative h-full w-full overflow-hidden rounded-[24px] bg-[#f4f4e9] opacity-0 md:w-[66.5vw] md:max-w-[1170px] md:rounded-[28px]"
+          className="footer-panel z relative h-fit w-full min-h-[800px] overflow-hidden rounded-[24px] bg-[#f4f4e9] opacity-0 md:w-[66.5vw] md:max-w-[1170px] md:rounded-[28px]"
         >
           {/* MAIN CONTENT */}
           <div
             ref={contentRef}
-            className="relative z-10 mx-auto grid w-[80%] grid-cols-1 gap-12 pb-[300px] pt-12 text-[#252525] md:w-[72%] md:grid-cols-2 md:gap-[12%] md:pb-[260px] md:pt-[7%]"
+            className="relative z-10 mx-auto grid w-[80%] grid-cols-1 gap-12 pb-[300px] pt-12 mb-40 text-[#252525] md:w-[72%] md:grid-cols-2 md:gap-[12%] md:pb-[260px] md:pt-[7%]"
           >
             {/* LEFT COLUMN */}
             <div className="flex flex-col">
@@ -351,9 +347,9 @@ const Footer = () => {
           {/* OVERSIZED WORDMARK */}
           <div
             ref={wordmarkRef}
-            className="pointer-events-none absolute bottom-[-0.10em] left-[9%] z-10 select-none opacity-0"
+            className="pointer-events-none absolute bottom-[-0.10em] left-[12%] -z-10 select-none opacity-0"
           >
-            <span className="block text-[clamp(150px,25vw,320px)] font-semibold leading-[0.76] tracking-[-0.105em] text-[#59bf9b]">
+            <span className="block text-[clamp(150px,25vw,320px)] font-semibold leading-[0.76] tracking-[.005em] text-[#59bf9b]">
               kora
             </span>
           </div>

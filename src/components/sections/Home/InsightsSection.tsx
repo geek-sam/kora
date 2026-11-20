@@ -30,7 +30,7 @@ const InsightCard = ({ insight }: InsightCardProps) => {
   return (
     <a
       href={`/insights/${insight.slug}`}
-      className="insight-card group relative isolate block aspect-[0.75] min-h-[480px] overflow-hidden rounded-[28px] bg-[#333] text-white md:min-h-[560px]"
+      className="insight-card group relative isolate block aspect-[0.75] min-h-[360px] overflow-hidden rounded-[28px] bg-[#333] text-white md:min-h-[560px]"
     >
       {/* Background Image */}
       <img
@@ -85,9 +85,9 @@ const InsightCard = ({ insight }: InsightCardProps) => {
 const InsightsSection = () => {
   return (
     <section id="insights" className="w-full px-3 py-16 md:px-4 md:py-20">
-      <div className="mx-auto grid max-w-[1370px] grid-cols-1 gap-8 md:grid-cols-[1.08fr_1fr_1fr] md:gap-5">
+      <div className="mx-auto grid max-w-[1500px] gap-12 lg:grid-cols-[.8fr_2fr] md:gap-5">
         {/* LEFT CONTENT */}
-        <div className="flex flex-col items-start justify-between md:min-h-[620px] md:py-1">
+        <div className="flex flex-col items-start justify-between lg:min-h-[420px] md:py-1">
           <div>
             <h2 className="text-[clamp(56px,6vw,82px)] font-normal leading-[0.98] tracking-[-0.075em] text-[#252525]">
               Insights.
@@ -103,17 +103,19 @@ const InsightsSection = () => {
           {/* View All Button */}
           <a
             href="/insights"
-            className="group mt-8 inline-flex min-h-[44px] items-center gap-6 rounded-full bg-[#242424] px-4 py-2.5 text-[13px] font-medium text-white transition-all duration-500 hover:bg-[#59bf9b] md:mt-0"
+            className="group mt-8 inline-flex min-h-[44px] items-center gap-6 rounded-full bg-[#242424] px-4 py-2.5 text-[13px] font-medium text-white transition-all duration-500 hover:bg-[#59bf9b] lg:mt-0"
           >
             View All
             <span className="h-2.5 w-2.5 rounded-full bg-[#f4f4e9] transition-transform duration-300 group-hover:scale-125" />
           </a>
         </div>
 
-        {/* INSIGHT CARDS */}
-        {insights.map((insight) => (
-          <InsightCard key={insight.id} insight={insight} />
-        ))}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6">
+          {/* INSIGHT CARDS */}
+          {insights.map((insight) => (
+            <InsightCard key={insight.id} insight={insight} />
+          ))}
+        </div>
       </div>
     </section>
   );
