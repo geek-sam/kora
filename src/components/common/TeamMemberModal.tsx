@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import type { TeamMember } from "../data/team";
+import type { TeamMember } from "../../data/dataConfig";
 
 interface TeamMemberModalProps {
   member: TeamMember | null;

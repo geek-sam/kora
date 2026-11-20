@@ -37,7 +37,7 @@ const TeamSection = () => {
 
             {/* Team Grid */}
             <div className="mt-12 grid grid-cols-1 gap-x-5 md:mt-14 md:grid-cols-2 md:gap-x-6">
-              {teamMembers.map((member, index) => {
+              {teamMembers.map((member, index: number) => {
                 const isActive = activeIndex === index;
 
                 return (

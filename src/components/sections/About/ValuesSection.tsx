@@ -107,7 +107,7 @@ const ValuesSection = () => {
 
         {/* Value Cards */}
         <div className="values-grid grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-4">
-          {values.map((value, index) => {
+          {values.map((value) => {
             const Icon = value.icon;
 
             return (

@@ -2,7 +2,6 @@ import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { Copy, Check } from "lucide-react";
 import { useState } from "react";
-import { main } from "framer-motion/client";
 import ContactSection from "../components/sections/CaseStudy/ContactSection";
 import FAQSection from "../components/sections/Home/FAQSection";
 
